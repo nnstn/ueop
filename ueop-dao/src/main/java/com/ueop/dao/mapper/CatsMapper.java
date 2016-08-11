@@ -10,13 +10,21 @@ public interface CatsMapper {
 
     int deleteByExample(CatsExample example);
 
+    int deleteByPrimaryKey(Long id);
+
     int insert(Cats record);
 
     int insertSelective(Cats record);
 
     List<Cats> selectByExample(CatsExample example);
 
+    Cats selectByPrimaryKey(Long id);
+
     int updateByExampleSelective(@Param("record") Cats record, @Param("example") CatsExample example);
 
     int updateByExample(@Param("record") Cats record, @Param("example") CatsExample example);
+
+    int updateByPrimaryKeySelective(Cats record);
+
+    int updateByPrimaryKey(Cats record);
 }
