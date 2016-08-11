@@ -1,0 +1,29 @@
+<!-- html5 标志 -->
+<!DOCTYPE html>
+<!-- lang 当前文档为中文 -->
+<html lang="zh-CN">
+  <head>
+  	<!-- 当前文档 编码格式为utf-8  -->
+    <meta charset="utf-8">
+    <title>Require demo 页面_1</title>
+  </head>
+  <body>
+    <h1>你好，世界！</h1>
+    
+    
+	<!-- data-main attribute tells require.js to load scripts/main.js after require.js loads -->
+	<script type="text/javascript"  src="../../require/require.js">
+
+	
+	</script>
+	<script type="text/javascript">
+	require(["script/util"], function(util) {
+		//alert(util);
+	    //This function is called when scripts/helper/util.js is loaded.
+	    //If util.js calls define(), then this function is not fired until
+	    //util's dependencies have loaded, and the util argument will hold
+	    //the module value for "helper/util".
+	});
+	</script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!-- html5 标志 -->
+<!DOCTYPE html>
+<!-- lang 当前文档为中文 -->
+<html lang="zh-CN">
+  <head>
+  	<!-- 当前文档 编码格式为utf-8  -->
+    <meta charset="utf-8">
+    <!-- 设置ie浏览器解析模式  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 视窗设置  user-scalable=no 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>云端开发工具</title>
+
+    <!-- 1.加载bootstarp 层叠样式表 -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/skin1/app.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!-- 是浏览器支持 IE8 和媒体查询语句 -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	<div id="header">
+    	<div id="logo"></div>
+    </div>
+	<div class="framebox">
+    	<div id="leftside" class="leftside">
+            <div class="inputbox">
+                <input name="key" type="text" id="searchInput" data-items="5" data-provide="typeahead" class="span3" placeholder="请输入关键字查询">
+                <button id="search" type="button">搜索</button>
+            </div> 
+            <div id="widgets">
+                              
+            </div>          
+        </div>
+        <div id="toggleArrow" class="toggleArrow clo" title="关闭控件面板"><<a href="create.html">这是一个a</a></div>
+        <div id="rightside" class="rightside">
+            
+        </div>
+    </div>
+    <div class="sideholder open" id="sideholder" title="打开配置面板"></div>
+
+    <!-- 2.加载jQuery库 并且要在加载bootstrap 之前-->
+    <script src="../jquery/jquery.min.js"></script>
+    <!-- 2.加载bootstrap 核心库  -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- 3.加载bootstrap 核心库  -->
+    <script src="../static/js/common.js"></script>
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+    	//1.加载左侧组件栏
+    	var url='/ueop/ueop/111/edit'
+    	commonajax(url,null,true,function(data){
+            var status = data.status;
+            if(200==status){
+               $("#widgets").html("<div id='widgetslist' class='list'>组件列表</div>");
+                var widgets = data.data.widgets
+                for (var i = 0; i < widgets.length; i++) {
+                    $("#widgetslist").append("<div id='widget_"+widgets[i].id+"' class='list'>"+widgets[i].name+"</div>");
+                };
+            }
+        });
+
+    	//2.绑定共享组件查询事件
+    	
+    	//3.绑定文件目录树
+    	
+    	
+    	
+    });
+    $(function(){
+        index.init();
+        $(window).resize(function(){
+            index.UIinit();  
+        });
+    });
+
+    var index = {
+    		
+    	w_width:$(window).width(),
+        w_height:$(window).height(),
+        //初始化主页面
+    	init:function(){
+    		
+    	}
+    }    
+    
+    
+    </script>
+  </body>
+</html>

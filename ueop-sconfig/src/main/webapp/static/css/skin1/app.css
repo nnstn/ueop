@@ -1,0 +1,62 @@
+html{
+    margin: 0; 
+    padding: 0; 
+    overflow: hidden;
+}
+body{
+	background:#f6f6f6;
+	color:#666
+}
+a{
+    text-decoration:none;
+}
+list{
+    height:400px; 
+    width:480px;
+    overflow-x:auto"
+}
+
+
+#header{
+    margin:0; padding:0; height:44px; z-index: 99; position: relative; background:#414141 url(images/topbg2.png) 0 0 repeat-x ; border-bottom:1px solid #e3e3e3
+}
+#logo{
+	background: url(images/toplogo2.png) 0 0 no-repeat ; width:150px; height:32px; position: absolute; top:7px; left:8px;
+}
+
+/* 主编辑区 */
+.framebox{
+    margin: 0;padding: 0; position:relative;
+	/*box-shadow: inset 0 1px 15px rgba(0, 0, 0, 0.18);*/
+}
+
+.leftside{
+    width: 190px; position: absolute; top:0; bottom: 0;left: 0; margin-top: -2px; z-index: 100; height: 100%; background:#414141 url("images/blcbg.png") repeat; border-right: 1px solid #313131;
+}
+
+.inputbox{border: 1px solid #cecece; height: 24px; line-height:24px; background: #fff; margin:14px 10px 10px 10px; padding: 0;}
+.inputbox input{border: none;box-shadow: none; width:134px; height: 24px; line-height: 24px; font-size: 12px; padding: 0 4px;}
+.inputbox button{display: inline-block; width: 16px; height: 16px; border: none; background: url("images/s.gif") no-repeat; text-indent: -9999px; margin: -6px 0 0 0;}
+
+
+.toggleArrow{
+    position: absolute; left: 191px; top:50%; margin-top: -20px; width: 9px; height: 35px; cursor: pointer;
+}
+.clo{
+    background: url("images/clo2.gif") no-repeat;
+}
+
+.rightside{
+    margin-left: 190px; padding: 10px;
+    box-shadow: inset 0 1px 15px rgba(0, 0, 0, 0.4);
+}
+
+.sideholder{
+    position: absolute;z-index:102; width: 9px; height:35px; right:0; top:50%; margin-top: 10px; cursor: pointer;
+}
+.sideholder.open{
+    background: url("images/sopen2.gif") no-repeat;
+}
+.sideholder.clo{
+    background: url("images/sclo2.gif") no-repeat;
+}
