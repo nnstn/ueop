@@ -30,4 +30,10 @@ public class Cats {
     public void setNum(Integer num) {
         this.num = num;
     }
+
+	@Override
+	public String toString() {
+		return "Cats [id=" + id + ", name=" + name + ", num=" + num + "]";
+	}
+    
 }
