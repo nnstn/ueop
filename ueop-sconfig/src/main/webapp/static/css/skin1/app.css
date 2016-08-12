@@ -2,7 +2,7 @@
  .accordion {
     width: 100%;
     max-width: 200px;
-    margin: 30px auto 20px;
+    margin: 0px auto 20px;
     background: #FFF;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -12,7 +12,7 @@
 .accordion .link {
     cursor: pointer;
     display: block;
-    padding: 15px 15px 15px 42px;
+    padding: 7px 15px 7px 10px;
     color: #4D4D4D;
     font-size: 14px;
     font-weight: 700;
@@ -57,7 +57,12 @@
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
 }
-
+.accordion span.left{
+    float: left;
+}
+.accordion span.right{
+    float: right;
+}
 /*** Submenu -----------------------------*/
  .submenu {
     display: none;
@@ -84,6 +89,7 @@
     background: #b63b4d;
     color: #FFF;
  }
+
 /*========手风琴列表样式 结束============*/
 
 #header {

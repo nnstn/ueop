@@ -1,5 +1,7 @@
 package com.ueop.sconfig.action;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ueop.common.pojo.UEOPResult;
+import com.ueop.dao.pojo.Widget;
 import com.ueop.sconfig.service.WidgetService;
 
 @Controller
@@ -17,19 +20,19 @@ public class WidgetController {
 	@RequestMapping("/all")
 	@ResponseBody
 	public UEOPResult getAllWidget(){
-		UEOPResult result = widgetService.getAllWidget();
-		return result;
+		List<Widget> result = widgetService.getAllWidget();
+		return UEOPResult.ok(result);
 	}
 	@RequestMapping("/{id}/id")
 	@ResponseBody
 	public UEOPResult getAllById(@PathVariable Long id){
-		UEOPResult result = widgetService.getAllById(id);
-		return result;
+		Widget result = widgetService.getWidgetById(id);
+		return UEOPResult.ok(result);
 	}
 	@RequestMapping("/{name}/name")
 	@ResponseBody
 	public UEOPResult getWidget(@PathVariable String name){
-		UEOPResult result = widgetService.getAllByName(name);
-		return result;
+		List<Widget> widgets = widgetService.getWidgetByName(name);
+		return UEOPResult.ok(widgets);
 	}
 }

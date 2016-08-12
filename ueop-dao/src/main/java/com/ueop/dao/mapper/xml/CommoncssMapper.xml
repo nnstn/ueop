@@ -3,7 +3,7 @@
 <mapper namespace="com.ueop.dao.mapper.CommoncssMapper" >
   <resultMap id="BaseResultMap" type="com.ueop.dao.pojo.Commoncss" >
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="class" property="class" jdbcType="VARCHAR" />
+    <result column="clazs" property="clazs" jdbcType="VARCHAR" />
     <result column="cat" property="cat" jdbcType="VARCHAR" />
     <result column="version" property="version" jdbcType="VARCHAR" />
     <result column="author" property="author" jdbcType="VARCHAR" />
@@ -68,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    name, class, cat, version, author, log
+    name, clazs, cat, version, author, log
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ueop.dao.pojo.CommoncssExample" >
     select
@@ -91,10 +91,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ueop.dao.pojo.Commoncss" >
-    insert into commoncss (name, class, cat, 
+    insert into commoncss (name, clazs, cat, 
       version, author, log
       )
-    values (#{name,jdbcType=VARCHAR}, #{class,jdbcType=VARCHAR}, #{cat,jdbcType=VARCHAR}, 
+    values (#{name,jdbcType=VARCHAR}, #{clazs,jdbcType=VARCHAR}, #{cat,jdbcType=VARCHAR}, 
       #{version,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{log,jdbcType=VARCHAR}
       )
   </insert>
@@ -104,8 +104,8 @@
       <if test="name != null" >
         name,
       </if>
-      <if test="class != null" >
-        class,
+      <if test="clazs != null" >
+        clazs,
       </if>
       <if test="cat != null" >
         cat,
@@ -124,8 +124,8 @@
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="class != null" >
-        #{class,jdbcType=VARCHAR},
+      <if test="clazs != null" >
+        #{clazs,jdbcType=VARCHAR},
       </if>
       <if test="cat != null" >
         #{cat,jdbcType=VARCHAR},
@@ -153,8 +153,8 @@
       <if test="record.name != null" >
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.class != null" >
-        class = #{record.class,jdbcType=VARCHAR},
+      <if test="record.clazs != null" >
+        clazs = #{record.clazs,jdbcType=VARCHAR},
       </if>
       <if test="record.cat != null" >
         cat = #{record.cat,jdbcType=VARCHAR},
@@ -176,7 +176,7 @@
   <update id="updateByExample" parameterType="map" >
     update commoncss
     set name = #{record.name,jdbcType=VARCHAR},
-      class = #{record.class,jdbcType=VARCHAR},
+      clazs = #{record.clazs,jdbcType=VARCHAR},
       cat = #{record.cat,jdbcType=VARCHAR},
       version = #{record.version,jdbcType=VARCHAR},
       author = #{record.author,jdbcType=VARCHAR},

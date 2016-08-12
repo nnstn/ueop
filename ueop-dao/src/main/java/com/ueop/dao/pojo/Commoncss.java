@@ -3,7 +3,7 @@ package com.ueop.dao.pojo;
 public class Commoncss {
     private String name;
 
-    //private String class;
+    private String clazs;
 
     private String cat;
 
@@ -21,13 +21,13 @@ public class Commoncss {
         this.name = name == null ? null : name.trim();
     }
 
-//    public String getClass() {
-//        return class;
-//    }
-//
-//    public void setClass(String class) {
-//        this.class = class == null ? null : class.trim();
-//    }
+    public String getClazs() {
+        return clazs;
+    }
+
+    public void setClazs(String clazs) {
+        this.clazs = clazs == null ? null : clazs.trim();
+    }
 
     public String getCat() {
         return cat;

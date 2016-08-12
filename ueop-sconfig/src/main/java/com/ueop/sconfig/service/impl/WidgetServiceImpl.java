@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.ueop.common.pojo.UEOPResult;
 import com.ueop.dao.mapper.WidgetMapper;
 import com.ueop.dao.pojo.Widget;
+import com.ueop.dao.pojo.WidgetExample;
+import com.ueop.dao.pojo.WidgetExample.Criteria;
 import com.ueop.sconfig.service.WidgetService;
 @Service
 public class WidgetServiceImpl implements WidgetService{
@@ -16,18 +16,22 @@ public class WidgetServiceImpl implements WidgetService{
 	private WidgetMapper widgetMapper;
 	
 	@Override
-	public UEOPResult getAllWidget() {
-		List<Widget> allWidget = widgetMapper.getAllWidget();
-		return UEOPResult.ok(allWidget);
+	public List<Widget> getAllWidget() {
+		WidgetExample example = new WidgetExample();
+		List<Widget> allWidget = widgetMapper.selectByExample(example);
+		return allWidget;
 	}
 	@Override
-	public UEOPResult getAllById(Long id) {
-		Widget widget = widgetMapper.getWidgetById(id);
-		return UEOPResult.ok(widget);
+	public Widget getWidgetById(Long id) {
+		Widget widget = widgetMapper.selectByPrimaryKey(id);
+		return widget;
 	}
 	@Override
-	public UEOPResult getAllByName(String name) {
-		List<Widget> widgets = widgetMapper.getWidgetByName(name);
-		return UEOPResult.ok(widgets);
+	public List<Widget>  getWidgetByName(String name) {
+		WidgetExample example = new WidgetExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andNameEqualTo(name);
+		List<Widget> widgets = widgetMapper.selectByExample(example);
+		return widgets;
 	}
 }

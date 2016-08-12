@@ -2,7 +2,7 @@
 * @Author: wangjn_bj
 * @Date:   2016-08-11 16:13:57
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-08-12 14:09:03
+* @Last Modified time: 2016-08-12 20:06:16
 */
 * {
     margin: 0;
@@ -41,9 +41,8 @@ h1 {
     font-size: 24px;
     font-weight: 400;
     text-align: center;
-    margin-top: 80px;
+    margin: 0 auto;
  }
-
 h1 a {
     color: #c12c42;
     font-size: 16px;

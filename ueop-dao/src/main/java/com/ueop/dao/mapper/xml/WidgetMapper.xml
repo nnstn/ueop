@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ueop.dao.mapper.WidgetMapper" >
-  
   <resultMap id="BaseResultMap" type="com.ueop.dao.pojo.Widget" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="name" property="name" jdbcType="VARCHAR" />
@@ -16,28 +15,339 @@
     <result column="type" property="type" jdbcType="VARCHAR" />
     <result column="author" property="author" jdbcType="VARCHAR" />
     <result column="order" property="order" jdbcType="VARCHAR" />
+    <result column="cid" property="cid" jdbcType="BIGINT" />
   </resultMap>
-  
-  <sql id="Base_Column_List" >
-    id, name, role, code, cat, online, thumbnail, demo, css, js, type, author
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
   </sql>
-  
-  <select id="getWidgetById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, role, code, cat, online, thumbnail, demo, css, js, type, author, order, 
+    cid
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ueop.dao.pojo.WidgetExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from widget
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from widget
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <select id="getWidgetByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
-    <include refid="Base_Column_List" />
-    from widget
-    where name = #{name,jdbcType=VARCHAR}
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from widget
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ueop.dao.pojo.WidgetExample" >
+    delete from widget
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ueop.dao.pojo.Widget" >
+    insert into widget (id, name, role, 
+      code, cat, online, 
+      thumbnail, demo, css, 
+      js, type, author, order, 
+      cid)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{role,jdbcType=VARCHAR}, 
+      #{code,jdbcType=VARCHAR}, #{cat,jdbcType=VARCHAR}, #{online,jdbcType=VARCHAR}, 
+      #{thumbnail,jdbcType=VARCHAR}, #{demo,jdbcType=VARCHAR}, #{css,jdbcType=VARCHAR}, 
+      #{js,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{order,jdbcType=VARCHAR}, 
+      #{cid,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ueop.dao.pojo.Widget" >
+    insert into widget
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="role != null" >
+        role,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="cat != null" >
+        cat,
+      </if>
+      <if test="online != null" >
+        online,
+      </if>
+      <if test="thumbnail != null" >
+        thumbnail,
+      </if>
+      <if test="demo != null" >
+        demo,
+      </if>
+      <if test="css != null" >
+        css,
+      </if>
+      <if test="js != null" >
+        js,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="author != null" >
+        author,
+      </if>
+      <if test="order != null" >
+        order,
+      </if>
+      <if test="cid != null" >
+        cid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="role != null" >
+        #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="cat != null" >
+        #{cat,jdbcType=VARCHAR},
+      </if>
+      <if test="online != null" >
+        #{online,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnail != null" >
+        #{thumbnail,jdbcType=VARCHAR},
+      </if>
+      <if test="demo != null" >
+        #{demo,jdbcType=VARCHAR},
+      </if>
+      <if test="css != null" >
+        #{css,jdbcType=VARCHAR},
+      </if>
+      <if test="js != null" >
+        #{js,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null" >
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="order != null" >
+        #{order,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null" >
+        #{cid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ueop.dao.pojo.WidgetExample" resultType="java.lang.Integer" >
+    select count(*) from widget
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
   </select>
-  <select id="getAllWidget" resultMap="BaseResultMap">
-    select 
-	<include refid="Base_Column_List" />
-  	from widget order by id desc
-  </select>
-  
+  <update id="updateByExampleSelective" parameterType="map" >
+    update widget
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.role != null" >
+        role = #{record.role,jdbcType=VARCHAR},
+      </if>
+      <if test="record.code != null" >
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cat != null" >
+        cat = #{record.cat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.online != null" >
+        online = #{record.online,jdbcType=VARCHAR},
+      </if>
+      <if test="record.thumbnail != null" >
+        thumbnail = #{record.thumbnail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.demo != null" >
+        demo = #{record.demo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.css != null" >
+        css = #{record.css,jdbcType=VARCHAR},
+      </if>
+      <if test="record.js != null" >
+        js = #{record.js,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.author != null" >
+        author = #{record.author,jdbcType=VARCHAR},
+      </if>
+      <if test="record.order != null" >
+        order = #{record.order,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cid != null" >
+        cid = #{record.cid,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update widget
+    set id = #{record.id,jdbcType=BIGINT},
+      name = #{record.name,jdbcType=VARCHAR},
+      role = #{record.role,jdbcType=VARCHAR},
+      code = #{record.code,jdbcType=VARCHAR},
+      cat = #{record.cat,jdbcType=VARCHAR},
+      online = #{record.online,jdbcType=VARCHAR},
+      thumbnail = #{record.thumbnail,jdbcType=VARCHAR},
+      demo = #{record.demo,jdbcType=VARCHAR},
+      css = #{record.css,jdbcType=VARCHAR},
+      js = #{record.js,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      author = #{record.author,jdbcType=VARCHAR},
+      order = #{record.order,jdbcType=VARCHAR},
+      cid = #{record.cid,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ueop.dao.pojo.Widget" >
+    update widget
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="role != null" >
+        role = #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="cat != null" >
+        cat = #{cat,jdbcType=VARCHAR},
+      </if>
+      <if test="online != null" >
+        online = #{online,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnail != null" >
+        thumbnail = #{thumbnail,jdbcType=VARCHAR},
+      </if>
+      <if test="demo != null" >
+        demo = #{demo,jdbcType=VARCHAR},
+      </if>
+      <if test="css != null" >
+        css = #{css,jdbcType=VARCHAR},
+      </if>
+      <if test="js != null" >
+        js = #{js,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null" >
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="order != null" >
+        order = #{order,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null" >
+        cid = #{cid,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ueop.dao.pojo.Widget" >
+    update widget
+    set name = #{name,jdbcType=VARCHAR},
+      role = #{role,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      cat = #{cat,jdbcType=VARCHAR},
+      online = #{online,jdbcType=VARCHAR},
+      thumbnail = #{thumbnail,jdbcType=VARCHAR},
+      demo = #{demo,jdbcType=VARCHAR},
+      css = #{css,jdbcType=VARCHAR},
+      js = #{js,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      order = #{order,jdbcType=VARCHAR},
+      cid = #{cid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
 </mapper>

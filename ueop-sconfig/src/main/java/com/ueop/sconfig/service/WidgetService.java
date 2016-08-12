@@ -1,10 +1,11 @@
 package com.ueop.sconfig.service;
 
-import com.ueop.common.pojo.UEOPResult;
+import java.util.List;
+import com.ueop.dao.pojo.Widget;
 
 public interface WidgetService {
-	public UEOPResult getAllWidget();
-	public UEOPResult getAllById(Long id);
-	public UEOPResult getAllByName(String name);
+	public List<Widget> getAllWidget();
+	public Widget getWidgetById(Long id);
+	public List<Widget> getWidgetByName(String name);
 	
 }

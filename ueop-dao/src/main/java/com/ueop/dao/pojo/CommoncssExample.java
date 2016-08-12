@@ -174,73 +174,73 @@ public class CommoncssExample {
             return (Criteria) this;
         }
 
-        public Criteria andClassIsNull() {
-            addCriterion("class is null");
+        public Criteria andClazsIsNull() {
+            addCriterion("clazs is null");
             return (Criteria) this;
         }
 
-        public Criteria andClassIsNotNull() {
-            addCriterion("class is not null");
+        public Criteria andClazsIsNotNull() {
+            addCriterion("clazs is not null");
             return (Criteria) this;
         }
 
-        public Criteria andClassEqualTo(String value) {
-            addCriterion("class =", value, "class");
+        public Criteria andClazsEqualTo(String value) {
+            addCriterion("clazs =", value, "clazs");
             return (Criteria) this;
         }
 
-        public Criteria andClassNotEqualTo(String value) {
-            addCriterion("class <>", value, "class");
+        public Criteria andClazsNotEqualTo(String value) {
+            addCriterion("clazs <>", value, "clazs");
             return (Criteria) this;
         }
 
-        public Criteria andClassGreaterThan(String value) {
-            addCriterion("class >", value, "class");
+        public Criteria andClazsGreaterThan(String value) {
+            addCriterion("clazs >", value, "clazs");
             return (Criteria) this;
         }
 
-        public Criteria andClassGreaterThanOrEqualTo(String value) {
-            addCriterion("class >=", value, "class");
+        public Criteria andClazsGreaterThanOrEqualTo(String value) {
+            addCriterion("clazs >=", value, "clazs");
             return (Criteria) this;
         }
 
-        public Criteria andClassLessThan(String value) {
-            addCriterion("class <", value, "class");
+        public Criteria andClazsLessThan(String value) {
+            addCriterion("clazs <", value, "clazs");
             return (Criteria) this;
         }
 
-        public Criteria andClassLessThanOrEqualTo(String value) {
-            addCriterion("class <=", value, "class");
+        public Criteria andClazsLessThanOrEqualTo(String value) {
+            addCriterion("clazs <=", value, "clazs");
             return (Criteria) this;
         }
 
-        public Criteria andClassLike(String value) {
-            addCriterion("class like", value, "class");
+        public Criteria andClazsLike(String value) {
+            addCriterion("clazs like", value, "clazs");
             return (Criteria) this;
         }
 
-        public Criteria andClassNotLike(String value) {
-            addCriterion("class not like", value, "class");
+        public Criteria andClazsNotLike(String value) {
+            addCriterion("clazs not like", value, "clazs");
             return (Criteria) this;
         }
 
-        public Criteria andClassIn(List<String> values) {
-            addCriterion("class in", values, "class");
+        public Criteria andClazsIn(List<String> values) {
+            addCriterion("clazs in", values, "clazs");
             return (Criteria) this;
         }
 
-        public Criteria andClassNotIn(List<String> values) {
-            addCriterion("class not in", values, "class");
+        public Criteria andClazsNotIn(List<String> values) {
+            addCriterion("clazs not in", values, "clazs");
             return (Criteria) this;
         }
 
-        public Criteria andClassBetween(String value1, String value2) {
-            addCriterion("class between", value1, value2, "class");
+        public Criteria andClazsBetween(String value1, String value2) {
+            addCriterion("clazs between", value1, value2, "clazs");
             return (Criteria) this;
         }
 
-        public Criteria andClassNotBetween(String value1, String value2) {
-            addCriterion("class not between", value1, value2, "class");
+        public Criteria andClazsNotBetween(String value1, String value2) {
+            addCriterion("clazs not between", value1, value2, "clazs");
             return (Criteria) this;
         }
 

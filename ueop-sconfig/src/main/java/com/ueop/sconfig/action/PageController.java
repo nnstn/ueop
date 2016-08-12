@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.ueop.common.pojo.UEOPResult;
 import com.ueop.common.util.ExceptionUtil;
 import com.ueop.dao.pojo.Cats;
+import com.ueop.dao.pojo.Widget;
 import com.ueop.sconfig.service.CatService;
 import com.ueop.sconfig.service.WidgetService;
 
@@ -30,10 +31,10 @@ public class PageController extends BaseController{
 			//2.用户权限校验
 			//3.获取用户组件列表
 			
-			UEOPResult widgets = widgetService.getAllWidget();
+			List<Widget> widgets = widgetService.getAllWidget();
 			List<Cats> cats = catService.getAllCat();
 			Map<String, Object> data = new HashMap<String, Object>();
-			data.put("widgets",widgets.getData());
+			data.put("widgets",widgets);
 			data.put("cats",cats);
 			return UEOPResult.ok(data);
 		} catch (Exception e) {

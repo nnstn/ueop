@@ -39,7 +39,7 @@
                 <h1>组件列表</h1>
                 <ul id="accordion" class="accordion">
                     <li>
-                        <div class="link"><i class="fa fa-paint-brush"></i>Diseño web<span class="glyphicon glyphicon-star" aria-hidden="true"></span></div>
+                        <div class="link">Diseño web<span class="right glyphicon glyphicon-chevron-down"></span></div>
                         <ul class="submenu">
                             <li><a href="#">Photoshop</a></li>
                             <li><a href="#">HTML</a></li>
@@ -99,13 +99,13 @@
             if(200==status){
                 var cats = data.data.cats;
                 var widgets = data.data.widgets
-                // for (var i = 0; i < cats.length; i++) {
-                //     $("#accordion").append("<li> <div class='link'><i class='fa fa-code'></i>"+cats[i].name+"<i class='fa fa-chevron-down'></li></div></li>");
-                // };
-
-                // for (var i = 0; i < widgets.length; i++) {
-                //     $("#widgetslist").append("<div id='widget_"+widgets[i].id+"' class='list'>"+widgets[i].name+"</div>");
-                // };
+                for (var i = 0; i < cats.length; i++) {
+                    $("#accordion").append("<li><div class='link'>"+cats[i].name+"<span class='right glyphicon glyphicon-chevron-down'></span></div><ul id='cat_"+cats[i].id+"' class='submenu'></ul></li>");
+                };
+                for (var i = 0; i < widgets.length; i++) {
+                    var cid = widgets[i].cid;
+                    $("#cat_"+cid).append("<li><a href='#'>"+widgets[i].name+"</a></li>");
+                };
             }
         });
 
@@ -116,22 +116,22 @@
     	
     	
     });
-    $(function(){
-        index.init();
-        $(window).resize(function(){
-            index.UIinit();  
-        });
-    });
+    // $(function(){
+    //     index.init();
+    //     $(window).resize(function(){
+    //         index.UIinit();  
+    //     });
+    // });
 
-    var index = {
+    // var index = {
     		
-    	w_width:$(window).width(),
-        w_height:$(window).height(),
-        //初始化主页面
-    	init:function(){
+    // 	w_width:$(window).width(),
+    //     w_height:$(window).height(),
+    //     //初始化主页面
+    // 	init:function(){
     		
-    	}
-    }    
+    // 	}
+    // }    
 
 $(function() {
     var Accordion = function(el, multiple) {

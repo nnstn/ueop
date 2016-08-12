@@ -1,20 +1,33 @@
 package com.ueop.dao.pojo;
 
 public class Widget {
-    
-	private Long id;
+    private Long id;
+
     private String name;
+
     private String role;
+
     private String code;
+
     private String cat;
+
     private String online;
+
     private String thumbnail;
+
     private String demo;
+
     private String css;
+
     private String js;
+
     private String type;
+
     private String author;
+
     private String order;
+
+    private Long cid;
 
     public Long getId() {
         return id;
@@ -118,5 +131,13 @@ public class Widget {
 
     public void setOrder(String order) {
         this.order = order == null ? null : order.trim();
+    }
+
+    public Long getCid() {
+        return cid;
+    }
+
+    public void setCid(Long cid) {
+        this.cid = cid;
     }
 }
