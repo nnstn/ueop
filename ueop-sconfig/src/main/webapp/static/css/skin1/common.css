@@ -1,0 +1,50 @@
+/* 
+* @Author: wangjn_bj
+* @Date:   2016-08-11 16:13:57
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-08-12 14:09:03
+*/
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    background: #414141;
+    font-family: Arial,'微软雅黑'; /*英文放到前面 中文就不能匹配英语，自动变为后面中文字体*/
+}
+
+ul {
+    list-style-type: none;
+}
+a{
+    text-decoration:none;
+}
+/*a标签相关伪类*/
+/*a:link{
+    color:red;
+}
+a:visited{
+    color:orange;
+}*/
+a:hover{
+    color:green;
+}
+a:active{
+    color:black;
+    background-color: black;
+}
+h1 {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 80px;
+ }
+
+h1 a {
+    color: #c12c42;
+    font-size: 16px;
+ }
