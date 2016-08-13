@@ -21,11 +21,9 @@ public class Widget {
 
     private String js;
 
-    private String type;
-
     private String author;
 
-    private String order;
+    private String orderS;
 
     private Long cid;
 
@@ -109,14 +107,6 @@ public class Widget {
         this.js = js == null ? null : js.trim();
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
-    }
-
     public String getAuthor() {
         return author;
     }
@@ -125,12 +115,12 @@ public class Widget {
         this.author = author == null ? null : author.trim();
     }
 
-    public String getOrder() {
-        return order;
+    public String getOrderS() {
+        return orderS;
     }
 
-    public void setOrder(String order) {
-        this.order = order == null ? null : order.trim();
+    public void setOrderS(String orderS) {
+        this.orderS = orderS == null ? null : orderS.trim();
     }
 
     public Long getCid() {

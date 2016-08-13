@@ -12,9 +12,8 @@
     <result column="demo" property="demo" jdbcType="VARCHAR" />
     <result column="css" property="css" jdbcType="VARCHAR" />
     <result column="js" property="js" jdbcType="VARCHAR" />
-    <result column="type" property="type" jdbcType="VARCHAR" />
     <result column="author" property="author" jdbcType="VARCHAR" />
-    <result column="order" property="order" jdbcType="VARCHAR" />
+    <result column="order_s" property="orderS" jdbcType="VARCHAR" />
     <result column="cid" property="cid" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -76,8 +75,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, role, code, cat, online, thumbnail, demo, css, js, type, author, order, 
-    cid
+    id, name, role, code, cat, online, thumbnail, demo, css, js, author, order_s, cid
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ueop.dao.pojo.WidgetExample" >
     select
@@ -113,12 +111,12 @@
     insert into widget (id, name, role, 
       code, cat, online, 
       thumbnail, demo, css, 
-      js, type, author, order, 
+      js, author, order_s, 
       cid)
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{role,jdbcType=VARCHAR}, 
       #{code,jdbcType=VARCHAR}, #{cat,jdbcType=VARCHAR}, #{online,jdbcType=VARCHAR}, 
       #{thumbnail,jdbcType=VARCHAR}, #{demo,jdbcType=VARCHAR}, #{css,jdbcType=VARCHAR}, 
-      #{js,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{order,jdbcType=VARCHAR}, 
+      #{js,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{orderS,jdbcType=VARCHAR}, 
       #{cid,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.ueop.dao.pojo.Widget" >
@@ -154,14 +152,11 @@
       <if test="js != null" >
         js,
       </if>
-      <if test="type != null" >
-        type,
-      </if>
       <if test="author != null" >
         author,
       </if>
-      <if test="order != null" >
-        order,
+      <if test="orderS != null" >
+        order_s,
       </if>
       <if test="cid != null" >
         cid,
@@ -198,14 +193,11 @@
       <if test="js != null" >
         #{js,jdbcType=VARCHAR},
       </if>
-      <if test="type != null" >
-        #{type,jdbcType=VARCHAR},
-      </if>
       <if test="author != null" >
         #{author,jdbcType=VARCHAR},
       </if>
-      <if test="order != null" >
-        #{order,jdbcType=VARCHAR},
+      <if test="orderS != null" >
+        #{orderS,jdbcType=VARCHAR},
       </if>
       <if test="cid != null" >
         #{cid,jdbcType=BIGINT},
@@ -251,14 +243,11 @@
       <if test="record.js != null" >
         js = #{record.js,jdbcType=VARCHAR},
       </if>
-      <if test="record.type != null" >
-        type = #{record.type,jdbcType=VARCHAR},
-      </if>
       <if test="record.author != null" >
         author = #{record.author,jdbcType=VARCHAR},
       </if>
-      <if test="record.order != null" >
-        order = #{record.order,jdbcType=VARCHAR},
+      <if test="record.orderS != null" >
+        order_s = #{record.orderS,jdbcType=VARCHAR},
       </if>
       <if test="record.cid != null" >
         cid = #{record.cid,jdbcType=BIGINT},
@@ -280,9 +269,8 @@
       demo = #{record.demo,jdbcType=VARCHAR},
       css = #{record.css,jdbcType=VARCHAR},
       js = #{record.js,jdbcType=VARCHAR},
-      type = #{record.type,jdbcType=VARCHAR},
       author = #{record.author,jdbcType=VARCHAR},
-      order = #{record.order,jdbcType=VARCHAR},
+      order_s = #{record.orderS,jdbcType=VARCHAR},
       cid = #{record.cid,jdbcType=BIGINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -318,14 +306,11 @@
       <if test="js != null" >
         js = #{js,jdbcType=VARCHAR},
       </if>
-      <if test="type != null" >
-        type = #{type,jdbcType=VARCHAR},
-      </if>
       <if test="author != null" >
         author = #{author,jdbcType=VARCHAR},
       </if>
-      <if test="order != null" >
-        order = #{order,jdbcType=VARCHAR},
+      <if test="orderS != null" >
+        order_s = #{orderS,jdbcType=VARCHAR},
       </if>
       <if test="cid != null" >
         cid = #{cid,jdbcType=BIGINT},
@@ -344,9 +329,8 @@
       demo = #{demo,jdbcType=VARCHAR},
       css = #{css,jdbcType=VARCHAR},
       js = #{js,jdbcType=VARCHAR},
-      type = #{type,jdbcType=VARCHAR},
       author = #{author,jdbcType=VARCHAR},
-      order = #{order,jdbcType=VARCHAR},
+      order_s = #{orderS,jdbcType=VARCHAR},
       cid = #{cid,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>

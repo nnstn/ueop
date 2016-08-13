@@ -794,76 +794,6 @@ public class WidgetExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNull() {
-            addCriterion("type is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeIsNotNull() {
-            addCriterion("type is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeEqualTo(String value) {
-            addCriterion("type =", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeNotEqualTo(String value) {
-            addCriterion("type <>", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeGreaterThan(String value) {
-            addCriterion("type >", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeGreaterThanOrEqualTo(String value) {
-            addCriterion("type >=", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeLessThan(String value) {
-            addCriterion("type <", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeLessThanOrEqualTo(String value) {
-            addCriterion("type <=", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeLike(String value) {
-            addCriterion("type like", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeNotLike(String value) {
-            addCriterion("type not like", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeIn(List<String> values) {
-            addCriterion("type in", values, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeNotIn(List<String> values) {
-            addCriterion("type not in", values, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeBetween(String value1, String value2) {
-            addCriterion("type between", value1, value2, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeNotBetween(String value1, String value2) {
-            addCriterion("type not between", value1, value2, "type");
-            return (Criteria) this;
-        }
-
         public Criteria andAuthorIsNull() {
             addCriterion("author is null");
             return (Criteria) this;
@@ -934,73 +864,73 @@ public class WidgetExample {
             return (Criteria) this;
         }
 
-        public Criteria andOrderIsNull() {
-            addCriterion("order is null");
+        public Criteria andOrderSIsNull() {
+            addCriterion("order_s is null");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIsNotNull() {
-            addCriterion("order is not null");
+        public Criteria andOrderSIsNotNull() {
+            addCriterion("order_s is not null");
             return (Criteria) this;
         }
 
-        public Criteria andOrderEqualTo(String value) {
-            addCriterion("order =", value, "order");
+        public Criteria andOrderSEqualTo(String value) {
+            addCriterion("order_s =", value, "orderS");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNotEqualTo(String value) {
-            addCriterion("order <>", value, "order");
+        public Criteria andOrderSNotEqualTo(String value) {
+            addCriterion("order_s <>", value, "orderS");
             return (Criteria) this;
         }
 
-        public Criteria andOrderGreaterThan(String value) {
-            addCriterion("order >", value, "order");
+        public Criteria andOrderSGreaterThan(String value) {
+            addCriterion("order_s >", value, "orderS");
             return (Criteria) this;
         }
 
-        public Criteria andOrderGreaterThanOrEqualTo(String value) {
-            addCriterion("order >=", value, "order");
+        public Criteria andOrderSGreaterThanOrEqualTo(String value) {
+            addCriterion("order_s >=", value, "orderS");
             return (Criteria) this;
         }
 
-        public Criteria andOrderLessThan(String value) {
-            addCriterion("order <", value, "order");
+        public Criteria andOrderSLessThan(String value) {
+            addCriterion("order_s <", value, "orderS");
             return (Criteria) this;
         }
 
-        public Criteria andOrderLessThanOrEqualTo(String value) {
-            addCriterion("order <=", value, "order");
+        public Criteria andOrderSLessThanOrEqualTo(String value) {
+            addCriterion("order_s <=", value, "orderS");
             return (Criteria) this;
         }
 
-        public Criteria andOrderLike(String value) {
-            addCriterion("order like", value, "order");
+        public Criteria andOrderSLike(String value) {
+            addCriterion("order_s like", value, "orderS");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNotLike(String value) {
-            addCriterion("order not like", value, "order");
+        public Criteria andOrderSNotLike(String value) {
+            addCriterion("order_s not like", value, "orderS");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIn(List<String> values) {
-            addCriterion("order in", values, "order");
+        public Criteria andOrderSIn(List<String> values) {
+            addCriterion("order_s in", values, "orderS");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNotIn(List<String> values) {
-            addCriterion("order not in", values, "order");
+        public Criteria andOrderSNotIn(List<String> values) {
+            addCriterion("order_s not in", values, "orderS");
             return (Criteria) this;
         }
 
-        public Criteria andOrderBetween(String value1, String value2) {
-            addCriterion("order between", value1, value2, "order");
+        public Criteria andOrderSBetween(String value1, String value2) {
+            addCriterion("order_s between", value1, value2, "orderS");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNotBetween(String value1, String value2) {
-            addCriterion("order not between", value1, value2, "order");
+        public Criteria andOrderSNotBetween(String value1, String value2) {
+            addCriterion("order_s not between", value1, value2, "orderS");
             return (Criteria) this;
         }
 
