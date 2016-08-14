@@ -4,7 +4,33 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../../static/css/skin1/common.css" >
     </head>
+    
+<style type="text/css">
+div#ddd{
+    width: 200px;
+    height: 200px;
+    padding-left: 10px;
+    padding-right: 20px;
+    padding:40px 50px 60px;
+    padding-bottom: 30px;
+    border: 1px solid #000;
+}
+
+</style>
     <body>
+        <div id="ddd">
+            
+        </div>
         <a href="##">这是一个a</a>
     </body>
+    <script type="text/javascript">
+     for(var i=100 ;i<1000;i++){
+            var a = i%10;
+            var b= parseInt(i/10) %10;
+            var c= parseInt(i/100); 
+            if(i== (Math.pow(a,3)+Math.pow(b,3)+Math.pow(c,3))){
+                console.log(i);
+            }
+    }
+    </script>
 </html>

@@ -50,9 +50,28 @@
             </div>          
         </div>
         <div id="toggleArrow" class="toggleArrow clo" title="关闭控件面板"><<a href="create.html">这是一个a</a></div>
+        
+
         <div id="rightside" class="rightside">
-            
-        </div>
+            <div>
+                <div id="ctrlbar">
+                    <div id="elements"><span class="active">body</span></div>  
+                    <div id="doorway" >
+                        <div class="btn-group editStatus">
+                            <button class="btn btn-mini active" id="visualStatus">设计</button>
+                            <button class="btn btn-mini" id="codeStatus">代码</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="visualEdit">
+                    <iframe onload="index.action.initFrame()" class="<%=node.getFrame() %>" width="100%" name="iframe" id="iframe" src="../demo/test/test.html"+"?"+new Date().getTime()" frameborder="0"></iframe>
+                </div>
+                <div class="hide">
+                  <pre id="codeEdit"></pre>
+                </div>
+            </div>
+        </div> 
     </div>
     <div class="sideholder open" id="sideholder" title="打开配置面板"></div>
 
